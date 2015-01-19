@@ -63,6 +63,8 @@ namespace WebApplication4.Controllers
         // GET: Posts/Edit/5
         public ActionResult Edit(int? id)
         {
+           //(c =>c.BlogId ==Id);
+            //var model=p.Comments.ToList();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
