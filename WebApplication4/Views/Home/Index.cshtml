@@ -6,42 +6,428 @@
     
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-
-    @if (User.IsInRole("Admin"))
-    {
-        <div class="row">
-            <div class="col-xs-12 margin-small">
-                @*<button class="btn btn-ar btn-primary btn-lg animated fadeInLeft animation-delay-2" data-toggle="modal" data-target="#createPost">New Post</button>*@
-                @Html.ActionLink("New Post", "Create", "Posts", null, new { @class = "btn btn-ar btn-primary btn-lg animated fadeInLeft animation-delay-2" })
+<body>
+<div id="#top"></div>
+<section id="home">
+    <div class="banner-container">
+        <img src="~/images/banner-bg.jpg" alt="banner" />
+        <div class="container banner-content">
+            <div id="da-slider" class="da-slider">
+                <div class="da-slide">
+                    <h2>Webdesigner</h2>
+                    <p>I'm Tyler Sharpe and this is my personal web site.</p>
+                    <div class="da-img"></div>
+                </div>
+                <div class="da-slide">
+                    <h2>UX/UI Developer</h2>
+                    <p>I develop websites using Bootstrap front-end framework..</p>
+                    <div class="da-img"></div>
+                </div>
+                <div class="da-slide">
+                    <h2>HTML5/CSS3</h2>
+                    <p>HTML5 is a markup language used for structuring and presenting Web.</p>
+                    <div class="da-img"></div>
+                </div>
+                <div class="da-slide">
+                    <h2>JavaScript/jQuery</h2>
+                    <p>jQuery: Write Less, Do More...</p>
+                    <div class="da-img"></div>
+                </div>
+                <!--  <nav class="da-arrows">
+                        <span class="da-arrows-prev"></span>
+                        <span class="da-arrows-next"></span>
+                    </nav> -->
             </div>
         </div>
-    }
-    @Html.ActionLink("View Posts", "Index", "Posts", null, new { @class = "btn btn-ar btn-primary btn-lg animated fadeInLeft animation-delay-2" })
-
-                <div class="col-md-4">
-                    <h2>Get more libraries</h2>
-                    <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+</section>
+<section id="introText">
+    <div class="container">
+        <div class="text-center">
+            <h1>I create beautiful responsive websites, Yes I am a UX geek</h1>
+            <p></p>
+        </div>
+    </div>
+</section>
+<!--About-->
+<section id="aboutUs" class="secPad">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>I am Tyler, a web Designer & developer in  the Winston Salem area.</h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <!-- item -->
+            <div class="col-md-4 text-center tileBox">
+                <div class="txtHead">
+                    <i class="fa fa-desktop"></i>
+                    <h3>Responsive <span class="id-color">Design</span></h3>
                 </div>
-                <div class="col-md-4">
-                    <h2>Web Hosting</h2>
-                    <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                    <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                <p></p>
+            </div>
+            <!-- end: -->
+            <!-- item -->
+            <div class="col-md-4 text-center tileBox">
+                <div class="txtHead">
+                    <i class="fa fa-css3"></i>
+                    <h3>HTML5/CSS3 <span class="id-color">Dev</span></h3>
+                </div>
+                <p></p>
+            </div>
+            <!-- end: -->
+            <!-- item -->
+            <div class="col-md-4 text-center tileBox">
+                <div class="txtHead">
+                    <i class="fa fa-lightbulb-o"></i>
+                    <h3>JavaScript <span class="id-color">jQuery</span></h3>
+                </div>
+                <p></p>
+            </div>
+            <!-- end: -->
+        </div>
+    </div>
+</section>
+<!--Quote-->
+<section id="quote" class="bg-parlex">
+    <div class="parlex-back">
+        <div class="container secPad text-center">
+            <h2>If I asked people what they wanted, they would have said ‘Faster Horses’.</h2><h3>-Henry Ford</h3>
+        </div>
+        <!--/.container-->
+    </div>
+</section>
+
+<!--Skills-->
+<section id="skills" class="secPad white">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>My Skills</h2>
+            <p></p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Programming <strong>Skills</strong></h2>
+                <p class="mrgBtm20">
+                    It takes knowledge, smart work, and dedication to make great ideas come to life. I have been helping make great ideas happen for the past 7 years and am always ready for new challenges.
+
+                </p>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">HTML5</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <span class="sr-only">90% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">C#</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <span class="sr-only">90% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">JavaScript</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                <span class="sr-only">90% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">jQuery/Ajax</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <span class="sr-only">80% Complete</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="col-sm-6">
+                <h2>Designing <strong>Skills</strong></h2>
+                <p class="mrgBtm20">
+                    Problem solving is not always about sitting in a board room talking about the way things should be done. I have a strong background in UI design which allows me to think on my feet and act upon it.
+
+                </p>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">Visual Studio</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <span class="sr-only">90% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">Bootstrap</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                                <span class="sr-only">80% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 skilltitle">CSS</div>
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                <span class="sr-only">75% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Experience-->
+<section id="experience" class="secPad">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>Professional Experience</h2>
+            <p>I'm a beginner but should have more to add soon.</p>
+        </div>
+        <div id="timeline">
+            <div class="row timeline-movement timeline-movement-top">
+                <div class="timeline-badge timeline-future-movement">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </div>
+                <div class="timeline-badge timeline-filter-movement">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row timeline-movement">
+
+                <div class="timeline-badge">
+                    <span class="timeline-balloon-date-day">Jan</span>
+                    <span class="timeline-balloon-date-month">2015</span>
+                </div>
+
+
+                <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="timeline-panel credits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo">Coder Foundry</span></li>
+                                    <li><span class="causale">Started the Coder Foundry master class. </span> </li>
+                                    <li><p><small class="text-muted"> 18/01/2015 - Present</small></p> </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-11">
+                            <div class="timeline-panel debits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo">Finished ECU</span></li>
+                                    <li><span class="causale">Got my degree in computer science. </span> </li>
+                                    <li><p><small class="text-muted"> 18/12/2014 - Present</small></p> </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--due -->
+
+            <div class="row timeline-movement">
+
+
+
+                <div class="timeline-badge">
+                    <span class="timeline-balloon-date-day">Jan</span>
+                    <span class="timeline-balloon-date-month">2013</span>
+                </div>
+
+                <div class="col-sm-offset-6 col-sm-6  timeline-item">
+                    <div class="row">
+                        <div class="col-sm-offset-1 col-sm-11">
+                            <div class="timeline-panel debits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo">A+ Certified</span></li>
+                                    <li><span class="causale">I have a Comptia A+ certification. </span> </li>
+                                    <li><p><small class="text-muted"> 11/01/2012 - 1/03/2013</small></p> </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6  timeline-item">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="timeline-panel credits">
+                                <ul class="timeline-panel-ul">
+                                    <li><span class="importo">East Carolina University</span></li>
+                                    <li><span class="causale"> Became computer science student at ECU. </span> </li>
+                                    <li><p><small class="text-muted"> 1/08/2012 - 12/15/2014</small></p> </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!--Portfolio-->
+<section id="portfolio" class="page-section section appear clearfix secPad">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>Portfolio</h2>
+            <p>At lorem Ipsum available, but the majority have suffered alteration in some form by injected humour.</p>
+        </div>
+        <div class="row">
+            <nav id="filter" class="col-md-12 text-center">
+                <ul>
+                    <li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+                    <li><a href="#" class="btn-theme btn-small" data-filter=".webdesign">Web Design</a></li>
+                    <li><a href="#" class="btn-theme btn-small" data-filter=".photography">Photography</a></li>
+                    <li><a href="#" class="btn-theme btn-small" data-filter=".print">Print</a></li>
+                </ul>
+            </nav>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="portfolio-items isotopeWrapper clearfix" id="3">
+                        <article class="col-sm-4 isotopeItem webdesign">
+                            <div class="portfolio-item">
+                                <img src="~/images/portfolio/img1.jpg" alt="" />
+                                <div class="portfolio-desc align-center">
+                                    <div class="folio-info">
+                                        <a href="images/portfolio/resume.docx" class="fancybox">
+                                            <h5>Resume</h5>
+                                            <i class="fa fa-arrows-alt fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-sm-4 isotopeItem photography">
+                            <div class="portfolio-item">
+                                <img src="~/images/portfolio/img2.jpg" alt="" />
+                                <div class="portfolio-desc align-center">
+                                    <div class="folio-info">
+                                        <a href="images/portfolio/javascript.html" class="fancybox">
+                                            <h5>Javascript excercises</h5>
+                                            <i class="fa fa-arrows-alt fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--Contact -->
+<section id="contactUs" class="page-section secPad">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center">
+                <!-- Heading -->
+                <h2>Let's Keep In Touch!</h2>
+                <p>Thank you for visiting out my profile. If you would like to get into contact with me, please fill out the form below.</p>
+            </div>
+        </div>
+        <div class="row mrgn30">
+            <form method="post" action="" id="contactfrm" role="form">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" title="Please enter your name (at least 2 characters)">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" title="Please enter a valid email address">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <label for="comments">Comments</label>
+                        <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Enter your message…" title="Please enter your message (at least 10 characters)"></textarea>
+                    </div>
+                    <button name="submit" type="submit" class="btn btn-lg btn-primary" id="submit">Submit</button>
+                    <div class="result"></div>
+                </div>
+            </form>
+            <div class="col-sm-4">
+                <h4>Address:</h4>
+                <address>
+                    Tyler Sharpe<br>
+                    5100 Ramillie Run<br>
+                    Winston Salem, NC 27106 USA
+                    <br>
+                </address>
+                <h4>Phone:</h4>
+                <address>
+                    910-632-4097<br>
+                </address>
+            </div>
+        </div>
+    </div>
+    <!--/.container-->
+</section>
+<section class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                Copyright 2014 | All Rights Reserved  -- Template by <a href="http://webThemez.com">WebThemez.com</a>
+            </div>
+        </div>
+        <!-- / .row -->
+    </div>
+</section>
+<a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
+<!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]-->
+<script src="~/js/modernizr-latest.js"></script>
+    <script src="~/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/js/jquery.isotope.min.js" type="text/javascript"></script>
+    <script src="~/js/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="~/js/jquery.nav.js" type="text/javascript"></script>
+    <script src="~/js/jquery.cslider.js" type="text/javascript"></script>
+    <script src="~/js/custom.js" type="text/javascript"></script>
+    <script src="~/js/owl-carousel/owl.carousel.js"></script>
+</body>               
+            

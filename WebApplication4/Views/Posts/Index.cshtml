@@ -4,54 +4,111 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container" id="blog">
+    <div class="row">
+        <header class="main-header">
+            <div class="container">
+                <div class="col-sm-6">
+                    <h1 class="page-title">Personal Blog</h1>
+                </div>
+                <div class="col-sm-6">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </header>
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="row">
+            <div class="col-xs-12 margin-small">
+                @*<button class="btn btn-ar btn-primary btn-lg animated fadeInLeft animation-delay-2" data-toggle="modal" data-target="#createPost">New Post</button>*@
+                @Html.ActionLink("New Post", "Create", "Posts", null, new { @class = "btn btn-ar btn-primary btn-lg animated fadeInLeft animation-delay-2" })
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-xs-12">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Created)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Updated)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Body)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MediaURL)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <article class="post animated fadeInLeft animation-delay-2">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h2 class="section-title no-margin-top">@item.Title</h2>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>@item.Body</p>
+                                </div>
+                            </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Created)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Updated)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MediaURL)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <i class="fa fa-clock-o"></i> @item.Created <i class="fa fa-user"> </i> <a href="#">Tyler Sharpe</a>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                                <h4 class="section-title no-margin-top lateral-padding">
+                                    Comments
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        @Html.ActionLink("Add Comment", "Create", "Comments", new { postId = item.Id }, new { @class = "btn btn-ar btn-primary pull-right animated fadeInRight animation-delay-2" })
+                                    }
+                                </h4>
+                            </div>
 
-</table>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-3 col-sm-8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> <!-- post -->
+            }
+
+        </div>
+
+        <!-- Button trigger modal -->
+        @*<div class="modal fade" id="createPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <input class="form-control" id="postTitle" placeholder="Enter post title here" />
+                        </div>
+                        <div class="form-group">
+                            <div class="modal-body">
+                                <textarea id="postText" class="form-control" rows="12"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="savePostBtn" type="button" class="btn btn-ar btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-ar btn-default btn-sm" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        <!-- Modal -->
+        @*<div class="modal fade" id="createComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-md-4">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="commentPostTitle"></h4>
+                        </div>
+                        <div class="form-group">
+                            <div class="modal-body">
+                                <textarea id="commentText" class="form-control" rows="6"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-ar btn-default" data-dismiss="modal">Close</button>
+                                <button id="saveCommentBtn" type="button" class="btn btn-ar btn-primary">Save Comment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </div><!-- row -->
+</div> <!-- container  -->

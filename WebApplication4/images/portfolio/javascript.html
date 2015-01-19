@@ -1,0 +1,220 @@
+<html>
+<head>
+    <script type="text/javascript">
+function functionOne() { alert('You clicked the top text'); }
+function functionTwo() { alert('You clicked the bottom text'); }
+function maxOfThree() {
+    var num1 = document.getElementById('num1');
+    var num2 = document.getElementById('num2');
+    var num3 = document.getElementById('num3');
+    if (num1.valueAsNumber > num2.valueAsNumber && num1.valueAsNumber > num3.valueAsNumber) {
+        document.getElementById('max').innerHTML = 'max is '+num1.value;
+    }
+    if (num2.valueAsNumber > num3.valueAsNumber && num2.valueAsNumber > num1.valueAsNumber) {
+        document.getElementById('max').innerHTML = 'max is ' + num2.value;
+    }
+    if (num3.valueAsNumber > num2.valueAsNumber && num3.valueAsNumber > num1.valueAsNumber) {
+        document.getElementById('max').innerHTML = 'max is ' + num3.value;
+    }
+}
+function multiply() {
+    var num = document.getElementById('numbers');
+    var listnum = []
+    listnum=num.value.split(',');
+    var j = 1;
+    for (var i = 0; i < listnum.length; i++) {
+
+        j = j * listnum[i];
+    }
+    document.getElementById('multiply').innerHTML = 'numbers multiplied is ' + j;
+}
+function sum() {
+    var num = document.getElementById('sumnumbers');
+    var listnum = []
+    listnum = num.value.split(',');
+    var j = 0;
+    for (var i = 0; i < listnum.length; i++) {
+
+        j = Number(j) + Number(listnum[i]);
+    }
+    document.getElementById('sum').innerHTML = 'numbers multiplied is ' + j;
+}
+function factorial() {
+    var num = document.getElementById('factnumbers').value;
+    var j = 1;
+    for (var i = num-1; i>0; i--) {
+
+        j = j * i;
+    }
+    document.getElementById('fact').innerHTML = 'factorial is ' + j;
+}
+function palindrone() {
+    var str = document.getElementById('palindrone').value;
+    if (str == str.split('').reverse().join('')) {
+        document.getElementById('pal').innerHTML = 'The word is a palindrone ';
+    }
+    else {
+        document.getElementById('pal').innerHTML = 'The word is not a palindrone ';
+    }
+}
+function fizzBuzz() {
+    var arr=[];
+
+    for (var i = 1; i < 101; i++) {
+
+        if (i % 5 === 0 && i % 3 !== 0) {
+            arr.push("Fizz");
+        }
+        if (i % 3 === 0 && i % 5 !== 0) {
+            arr.push("Buzz");
+        }
+        if (i % 3 === 0 && i % 5 === 0) {
+            arr.push("FizzBuzz");
+        }
+        if (i % 3 !== 0 && i % 5 !== 0) {
+                arr.push(i);
+        }
+        
+        document.getElementById('fb').innerHTML = arr;
+    }
+}
+function perfect() {
+    var nums = 0;
+    var a = document.getElementById('perfect').valueAsNumber;
+    var z = a;
+    var c = 0;
+    for (var i = 1; i < a; i++) {
+        if (a % i === 0) {
+            c = c + i;
+        }
+    }
+    if (c === z) {
+        document.getElementById('per').innerHTML = a +  ' is a perfect number';
+    }
+    else {
+        document.getElementById('per').innerHTML = a + ' is not a perfect number';
+    }
+}
+function happy() {
+    var counter = 0;
+    i = 1;
+    j = [];
+    while (counter < 6) {
+        if (happyChecker(i)) {
+            counter++;
+            j.push(i);
+            
+        }
+        i++;
+    }
+    document.getElementById('happy').innerHTML = j + '  are happy numbers';
+}
+
+
+    function happyChecker(n) {
+     var arr = [];
+     var newNum = 0;
+     //here I split a number into a string then into an array of strings//
+     num = n.toString().split("");
+     for (var i = 0; i < num.length; i++) {
+         arr[i] = parseInt(num[i], 10);
+     }
+     //here I square each number then add it to newNum//
+     for (var i = 0; i < arr.length; i++) {
+         newNum += Math.pow(arr[i], 2);
+     }
+     //here I noticed that all unhappy numbers eventually came into one of these three//
+     //( and more) numbers, so I chose them to shorten the checking. A temporary solution for sure//       
+     if (newNum === 58 || newNum === 4 || newNum == 37) {
+         return false;
+     }
+
+     if (newNum === 1) {
+
+         return true;
+     } else {
+         return happyChecker(newNum);
+     }
+
+    }
+
+function isArmstrongNumber(a){
+         
+    var b, z, c = 0;
+    z = a;
+    while (z > 0) {
+        b = z % 10;
+        c = c + (b * b * b);
+        z = parseInt(z / 10);
+    }
+    if (a == c)
+        return 'true';
+    else
+        return 'false';
+}
+function arm() {
+    var j = [];
+    for (var i = 100; i < 1001; i++) {
+        if (isArmstrongNumber(i) === 'true') {
+            j.push(i);
+        }
+    }
+    document.getElementById('arml').innerHTML = j + '  are armstrong numbers';
+}
+
+    </script>
+</head>
+<body>
+    <input type="number" id="num1" />
+    <input type="number" id="num2" />
+    <input type="number" id="num3" />
+    <br>
+    <p><a href="#" onclick="maxOfThree();">run max of three method</a></p>
+    <label id="max">max is</label>
+    <br>
+    <br>
+    <button onclick="multiply();" href="javascript:;">Run multiply method to multiply number seperated by ,</button>
+    <input type="text" id="numbers" />
+    <label id="multiply">numbers multiplied is</label>
+    <br>
+    <br>
+    <label id="sum">sum is</label>
+    <button onclick="sum();" href="javascript:;">Run sum method to add numbers seperated by ,</button>
+    <input type="text" id="sumnumbers" />
+    <label id="sum">numbers added is</label>
+    <br>
+    <br>
+    <br>
+    <label id="factorial">factorial is</label>
+    <button onclick="factorial();" href="javascript:;">find the factorial of the number entered</button>
+    <input type="number" id="factnumbers" />
+    <label id="fact">factorial is</label>
+    <br>
+    <br>
+    <br>
+    <label id="pal">Find out if word is a palindrone</label>
+    <button onclick="palindrone();" href="javascript:;">enter</button>
+    <input type="text" id="palindrone" />
+    <br>
+    <br>
+    <br>
+    <label id="fb">Click to run method FizzBuzz</label>
+    <button onclick="fizzBuzz();" href="javascript:;">enter</button>
+    <br>
+    <br>
+    <br>
+    <label id="per">Find out if number is perfect</label>
+    <button onclick="perfect();" href="javascript:;">enter</button>
+    <input type="number" id="perfect" />
+    <br>
+    <br>
+    <br>
+    <label id="happy">display happy numbers</label>
+    <button onclick="happy();" href="javascript:;">enter</button>
+    <br>
+    <br>
+    <br>
+    <label id="arml">display all 3 digit armstrong numbers</label>
+    <button onclick="arm();" href="javascript:;">enter</button>
+</body>
+</html>
