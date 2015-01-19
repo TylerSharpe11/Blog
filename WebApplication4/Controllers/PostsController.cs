@@ -84,6 +84,7 @@ namespace WebApplication4.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.Updated = new DateTimeOffset(DateTime.Now);
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
